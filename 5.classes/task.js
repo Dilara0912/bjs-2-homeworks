@@ -3,16 +3,17 @@ class PrintEditionItem {
 		this.name = name;
 		this.releaseDate = releaseDate;
 		this.pagesCount = pagesCount;
-		this._state = state;
+		this.state = state;
+        this._state = state;
 		this.type = type;
 	}
 
 	fix() {
-		this.state = this._state * 1.5;
+		this.state *= 1.5;
 	}
 
-	set state(number) {
-		if (number < 0) {
+	set state(number) {        
+        if (number < 0) {
 			this._state = 0;
 		} else if (number > 100) {
 			this._state = 100;
@@ -43,24 +44,21 @@ class Book extends PrintEditionItem {
 
 class NovelBook extends Book {
 	constructor(author, name, releaseDate, pagesCount) {
-		super(name, releaseDate, pagesCount);
-		this.author = author;
+		super(author, name, releaseDate, pagesCount);
 		this.type = "novel";
 	}
 }
 
 class FantasticBook extends Book {
 	constructor(author, name, releaseDate, pagesCount) {
-		super(name, releaseDate, pagesCount);
-		this.author = author;
+		super(author, name, releaseDate, pagesCount);		
 		this.type = "fantastic";
 	}
 }
 
 class DetectiveBook extends Book {
 	constructor(author, name, releaseDate, pagesCount) {
-		super(name, releaseDate, pagesCount);
-		this.author = author;
+		super(author, name, releaseDate, pagesCount);		
 		this.type = "detective";
 	}
 }
@@ -96,8 +94,6 @@ class Library {
 		}
 	}
 }
-
-
 
 function Student(name, gender, age) {
 	this.name = name;
