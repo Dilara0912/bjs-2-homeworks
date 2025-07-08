@@ -11,8 +11,7 @@ class AlarmClock {
 
 		const hasCallAtSameTime = this.alarmCollection.some(alarm => alarm.time === targetTime);
 		if (hasCallAtSameTime) {
-			console.warn('Уже присутствует звонок на это же время');
-			return;
+			console.warn('Уже присутствует звонок на это же время');			
 		}
 
 		const newCall = {
